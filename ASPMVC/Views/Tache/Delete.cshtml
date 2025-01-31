@@ -1,0 +1,15 @@
+﻿@model ASPMVC.Models.ViewModels.TacheDelete
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Suppression de "@Model.Titre"</h1>
+
+<h3>Êtes-vous sûr de vouloir supprimer cette tâche?</h3>
+<div>    
+    <form asp-action="Delete">
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a asp-action="Index">Revenir à la liste</a>
+    </form>
+</div>

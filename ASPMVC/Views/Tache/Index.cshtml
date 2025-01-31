@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ASPMVC.Models.ViewModels.TacheListItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Vos tâches</h1>
+
+<p>
+    <a asp-action="Create">Ajoutez une nouvelle tâche</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titre)
+            </td>
+            <td>
+                @Html.ActionLink("Modifier", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Vue détaillée", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Supprimer", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
